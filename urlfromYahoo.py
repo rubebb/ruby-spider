@@ -11,7 +11,7 @@ def urlfromYahoo(word):
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87'}
         url ='https://hk.search.yahoo.com/search?fr=yfp-search-sb&p={name}&b={page}'.format(name=urllib.quote(word),page=page)
         html = requests.get(url=url,headers=headers,timeout=5)
-        html.encoding = 'gbk'  # 将编码格式设置为utf-8
+        html.encoding = 'gbk'  
         soup = bs(html.content, 'lxml', from_encoding='utf-8')
         pp = soup.find_all('a',attrs={'href':re.compile('^http'),'target':'_blank','referrerpolicy':'origin','class':'ac-algo fz-l lh-20 tc d-ib va-mid'})
         for i in pp:
