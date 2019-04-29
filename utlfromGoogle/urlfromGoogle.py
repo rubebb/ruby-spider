@@ -13,7 +13,7 @@ class GoogleUrlSearch(unittest.TestCase):
 
     def setUp(self):
         self.word = raw_input(u'Tell me what u want to search:').decode('utf-8')
-        #用你的搜狐
+        #用你的火狐
         self.driver = webdriver.Firefox()
 
     def test_search_in_python_org(self):
